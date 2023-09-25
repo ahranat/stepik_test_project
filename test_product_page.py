@@ -1,8 +1,7 @@
 import pytest 
 from .pages.product_page import ProductPage
 from .pages.bascket_page import BasketPage
-from .pages.login_page import LoginPage
-import time
+
 
 
 links = ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
