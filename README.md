@@ -6,7 +6,7 @@ Final project of the course at Stepik platform
 - selenium==4.12.0
 
 ## Start:
-- git clone https://github.com/Danielrogd/Pytest_project.git
+- git clone git@github.com:ahranat/stepik_test_project.git
 - cd Pytest_project
 - pip install -r requirements.txt 
 
