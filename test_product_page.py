@@ -79,21 +79,13 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
 
 class TestUserAddToBasketFromProductPage:
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
-    login_link = 'http://selenium1py.pythonanywhere.com/en-gb/accounts/login/'
 
-    @pytest.fixture(scope='function')
-    def setup(self, browser):
-        login_page = LoginPage(browser, self.login_link)
-        login_page.open()
-        login_page.register_new_user(email = str(time.time()) + "@fakemail.org", password = 'QWEqwe123!')
-        login_page.should_be_authorized_user()
-
-    def test_user_cant_see_success_message(self, browser, setup):
+    def test_user_cant_see_success_message(self, browser, create_new_user):
         page = ProductPage(browser, self.link)
         page.open()
         page.should_not_be_success_message()
 
-    def test_user_can_add_product_to_basket(self, browser, setup):
+    def test_user_can_add_product_to_basket(self, browser, create_new_user):
         page = ProductPage(browser, self.link)
         page.open()
         page.should_be_add_to_cart_button()
